@@ -13,23 +13,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                {{#views}}
-                <{{type}} userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="{{id}}" userLabel="{{name}}"{{#classname}} customClass="{{classname}}"{{/classname}}{{#image_attribute}} image="{{image_attribute}}"{{/image_attribute}}>
-                    {{#color_attributes}}
-                    <color key="{{key}}" red="{{red}}" green="{{green}}" blue="{{blue}}" alpha="1.0" colorSpace="calibratedRGB"/>
-                    {{/color_attributes}}
-                	<constraints>
-                	{{#inner_constraints}}
-                        <constraint firstAttribute="{{attribute}}" constant="{{constant}}" id="{{id}}"/>
-                	{{/inner_constraints}}
-                	</constraints>
-                </{{type}}>
-                {{/views}}
+            {{#views}}
+                {{>recursive_partial}}
+            {{/views}}
             </subviews>
             <constraints>
-            {{#constraints}}
-                <constraint firstItem="{{item1.id}}" firstAttribute="{{attribute1}}" secondItem="{{item2.id}}" secondAttribute="{{attribute2}}" constant="{{constant}}" id="{{id}}"/>
-            {{/constraints}}
+            {{#superview.constraints}}
+                <constraint firstItem="{{item1.id}}" firstAttribute="{{attribute1}}" secondItem="{{item2.id}}" secondAttribute="{{attribute2}}" constant="{{constant}}"  multiplier="{{multiplier}}" id="{{id}}"/>
+            {{/superview.constraints}}
             </constraints>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

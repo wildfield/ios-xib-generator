@@ -2,18 +2,26 @@
 	"class": "UIView",
 	"views": {"image": "UIImageView",
 			  "stars": "UIView:StarsView",
-			  "foot": "UIView"},
+			  "foot": "UIView",
+			  "label:stars": "UILabel"},
 	"constraints": [
-		[["image", "stars", "foot"], "Right:Left:30"],
+		[["image", "stars", "foot"], "CenterX:CenterX:0"],
 		["image", "Left:superview:Left:70"],
 		["image", "Top:superview:Top:50"],
+		["stars", "height:superview:Height:0.5x"],
 		["stars", "Top:superview:Top:150"],
-		[["image", "stars"], "height:80"],
-		[["image", "stars"], "width:100"]
+		[["image", "foot"], "height:80"],
+		[["image", "stars", "foot"], "width:100"],
+		[["image", "foot"], "CenterY:CenterY:60"],
+		["label", "CenterX:superview:CenterX:0"],
+		["label", "CenterY:superview:CenterY:0"]
 	],
 	"attributes": [
 		["image", "BackgroundColor:#5266FF"],
 		["stars", "BackgroundColor:yellow"],
-		["stars", "Image:test.png"]
+		["foot", "BackgroundColor:blue"],
+		["stars", "Image:test.png"],
+		["label", "FontDescription:TrebuchetMS-Bold:Trebuchet MS:14"],
+		["label", "Text:Hello Brothers"]
 	]
 }

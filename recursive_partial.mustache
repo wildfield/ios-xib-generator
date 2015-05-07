@@ -1,0 +1,23 @@
+<{{type}} userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="{{id}}" userLabel="{{name}}" opaque="{{opaque}}"{{#classname}} customClass="{{classname}}"{{/classname}}{{#image_attribute}} image="{{image_attribute}}"{{/image_attribute}}{{#text}} text="{{text}}"{{/text}}>
+    {{#color_attributes}}
+    <color key="{{key}}" red="{{red}}" green="{{green}}" blue="{{blue}}" alpha="1.0" colorSpace="calibratedRGB"/>
+    {{/color_attributes}}
+    {{#font_attributes}}
+    <fontDescription key="{{key}}" name="{{name}}" family="{{family}}" pointSize="{{points}}"/>
+    {{/font_attributes}}
+	<constraints>
+	{{#constraints}}
+        {{#inner}}
+        <constraint firstAttribute="{{attribute}}" constant="{{constant}}" id="{{id}}"/>
+        {{/inner}}
+        {{^inner}}
+        <constraint {{#item1}}firstItem="{{item1.id}}"{{/item1}} firstAttribute="{{attribute1}}" {{#item2}}secondItem="{{item2.id}}"{{/item2}} {{#attribute2}}secondAttribute="{{attribute2}}"{{/attribute2}} constant="{{constant}}" multiplier="{{multiplier}}" id="{{id}}"/>
+        {{/inner}}
+	{{/constraints}}
+	</constraints>
+    <subviews>
+    {{#subviews}}
+        {{>recursive_partial}}
+    {{/subviews}}
+    </subviews>
+</{{type}}>
