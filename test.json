@@ -1,0 +1,19 @@
+{
+	"class": "UIView",
+	"views": {"image": "UIImageView",
+			  "stars": "UIView:StarsView",
+			  "foot": "UIView"},
+	"constraints": [
+		[["image", "stars", "foot"], "Right:Left:30"],
+		["image", "Left:superview:Left:70"],
+		["image", "Top:superview:Top:50"],
+		["stars", "Top:superview:Top:150"],
+		[["image", "stars"], "height:80"],
+		[["image", "stars"], "width:100"]
+	],
+	"attributes": [
+		["image", "BackgroundColor:#5266FF"],
+		["stars", "BackgroundColor:yellow"],
+		["stars", "Image:test.png"]
+	]
+}
